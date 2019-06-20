@@ -8,7 +8,7 @@ Rev.C 2019年6月
 ・入力に抵抗を追加
 ・V4220Mをリセットできるようマイコンと接続
 ・U7(7805)、U9(7833)の放熱部をスルーホールへ変更
-・U5をSTM32F722とSTM32F730に対応可能なよう周辺回路を変更(裏面シルク参照)
+・U5をSTM32F722とSTM32F730に対応可能なよう周辺回路を変更
 
 Rev.B 2019年2月
 ・BIASへの接続ミスを修正
@@ -51,3 +51,10 @@ NJM78L33SU3	1	U10
 NJM2845DL1-33	1	U9
 NJM78L05SU3	2	U6, U8
 NJM7805SDL1	1	U7
+
+[ F405 -> F722 or F730 ]
+C19: 2.2uF -> Jumper
+C20: 2.2uF -> Jumper
+C44: Nothing -> 4.7uF
+Not compatible pins:
+PC5, PB0, PB1, PB2, PB10, PB11
