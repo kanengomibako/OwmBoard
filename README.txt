@@ -1,23 +1,23 @@
 Owm Board
 
-Owm Pedal�ɗp���Ă���DSP�{�[�h�ł��B
-�u���O�L����https://drugscore.blog.fc2.com/blog-entry-237.html
+Owm Pedalに用いているDSPボードです。
+製作記事→https://kanengomibako.github.io/pages/00237.html
 
-���X�V������
-Rev.C 2019�N6��
-�E���͂ɒ�R��ǉ�
-�EV4220M�����Z�b�g�ł���悤�}�C�R���Ɛڑ�
-�EU7(7805)�AU9(7833)�̕��M�����X���[�z�[���֕ύX
-�EU5��STM32F722��STM32F730�ɑΉ��\�Ȃ悤���Ӊ�H��ύX
-��STM32F7�ł̒ǉ��������͍ŉ����Q��
+＜更新履歴＞
+Rev.C 2019年6月
+・入力に抵抗を追加
+・V4220Mをリセットできるようマイコンと接続
+・U7(7805)、U9(7833)の放熱部をスルーホールへ変更
+・U5をSTM32F722とSTM32F730に対応可能なよう周辺回路を変更
+※STM32F7での追加結線等は最下部参照
 
-Rev.B 2019�N2��
-�EBIAS�ւ̐ڑ��~�X���C��
+Rev.B 2019年2月
+・BIASへの接続ミスを修正
 
-Rev.A 2018�N12��
+Rev.A 2018年12月
 
-���p�[�c���X�g�iRev.C�j��
-20p*	4	[1608] C15, C16, C17, C18 *�����U���q�ɂ��e�ʂ��ς��
+＜パーツリスト（Rev.C）＞
+20p*	4	[1608] C15, C16, C17, C18 *水晶振動子により容量が変わる
 220p	4	[1608] C7, C8, C12, C13
 1n	4	[1608] C5, C6, C10, C11
 10n	2	[1608] C2, C4
@@ -25,8 +25,8 @@ Rev.A 2018�N12��
 100n*	2	[3225] C1,C3 *PMLCAP
 2u2	2	[2012] C19, C20
 10u	5	[3216] C26, C27, C28, C29, C43
-10u*	2	C9, C14 *SMD�d���R���f���T�i���a5mm�j
-100u*	2	C21, C41 *DIP�d���R���f���T�i���a6.3mm�j
+10u*	2	C9, C14 *SMD電解コンデンサ（直径5mm）
+100u*	2	C21, C41 *DIP電解コンデンサ（直径6.3mm）
 
 100R	6	[2012] R5, R6, R11, R12, R21, R31
 1k	3	[2012] R1, R7, R38
@@ -37,7 +37,7 @@ Rev.A 2018�N12��
 1M	2	[1608] R2, R8
 2.2M	2	[1608] R35, R45
 
-330R*	1	[2012] FB1 *SMD�t�F���C�g�r�[�Y BLM21PG331SN
+330R*	1	[2012] FB1 *SMDフェライトビーズ BLM21PG331SN
 		
 8MHz		1	Y2
 12.288MHz	1	Y1
@@ -59,7 +59,7 @@ C20: 2.2uF -> Jumper
 C44: Nothing -> 4.7uF
 Not compatible pins:
 PC5, PB0, PB1, PB2, PB10, PB11
-��STM32F7�ł͈ȉ��̂悤�Ƀe�X�g�|�C���g�ƃs���̌������K�v
-LRCK��PA15
-BCK��PC10
-ADC��PC12
+※STM32F7では以下のようにテストポイントとピンの結線が必要
+LRCK→PA15
+BCK→PC10
+ADC→PC12
